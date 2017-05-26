@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h3>Tournament #<%= @tournament.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Name</dt>
+      <dd><%= @tournament.name %></dd>
+
+      <dt>Location</dt>
+      <dd><%= @tournament.location %></dd>
+
+      <dt>Date</dt>
+      <dd><%= @tournament.date %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/tournaments" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/tournaments/<%= @tournament.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_tournament/<%= @tournament.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

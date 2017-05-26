@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h1>
+    Questions
+    <a href="/questions/new" class="btn btn-lg btn-success">New Question</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Game</th>
+        <th>Team a tossup</th>
+        <th>Team a penalty</th>
+        <th>Team a bonus</th>
+        <th>Team b tossup</th>
+        <th>Team b penalty</th>
+        <th>Team b bonus</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @questions.each do |question| %>
+      <tr>
+        <td><%= question.game_id %></td>
+        <td><%= question.team_a_tossup %></td>
+        <td><%= question.team_a_penalty %></td>
+        <td><%= question.team_a_bonus %></td>
+        <td><%= question.team_b_tossup %></td>
+        <td><%= question.team_b_penalty %></td>
+        <td><%= question.team_b_bonus %></td>
+        <td>
+          <a href="/questions/<%= question.id %>" class="btn btn-primary">Show</a>
+          <a href="/questions/<%= question.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_question/<%= question.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

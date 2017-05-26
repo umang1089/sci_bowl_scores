@@ -1,0 +1,91 @@
+<!-- Validation failure messages -->
+<% if @question.errors.any? %>
+  <% @question.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Question #<%= @question.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_question/<%= @question.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for game_id -->
+      <div class="form-group">
+        <label for="game_id" class="control-label">
+          Game
+        </label>
+
+        <input type="text" id="game_id" name="game_id" placeholder="Game" class="form-control" value="<%= @question.game_id %>">
+      </div>
+
+      <!-- Label and input for team_a_tossup -->
+      <div class="form-group">
+        <label for="team_a_tossup" class="control-label">
+          Team a tossup
+        </label>
+
+        <input type="text" id="team_a_tossup" name="team_a_tossup" placeholder="Team a tossup" class="form-control" value="<%= @question.team_a_tossup %>">
+      </div>
+
+      <!-- Label and input for team_a_penalty -->
+      <div class="form-group">
+        <label for="team_a_penalty" class="control-label">
+          Team a penalty
+        </label>
+
+        <input type="text" id="team_a_penalty" name="team_a_penalty" placeholder="Team a penalty" class="form-control" value="<%= @question.team_a_penalty %>">
+      </div>
+
+      <!-- Label and input for team_a_bonus -->
+      <div class="form-group">
+        <label for="team_a_bonus" class="control-label">
+          Team a bonus
+        </label>
+
+        <input type="text" id="team_a_bonus" name="team_a_bonus" placeholder="Team a bonus" class="form-control" value="<%= @question.team_a_bonus %>">
+      </div>
+
+      <!-- Label and input for team_b_tossup -->
+      <div class="form-group">
+        <label for="team_b_tossup" class="control-label">
+          Team b tossup
+        </label>
+
+        <input type="text" id="team_b_tossup" name="team_b_tossup" placeholder="Team b tossup" class="form-control" value="<%= @question.team_b_tossup %>">
+      </div>
+
+      <!-- Label and input for team_b_penalty -->
+      <div class="form-group">
+        <label for="team_b_penalty" class="control-label">
+          Team b penalty
+        </label>
+
+        <input type="text" id="team_b_penalty" name="team_b_penalty" placeholder="Team b penalty" class="form-control" value="<%= @question.team_b_penalty %>">
+      </div>
+
+      <!-- Label and input for team_b_bonus -->
+      <div class="form-group">
+        <label for="team_b_bonus" class="control-label">
+          Team b bonus
+        </label>
+
+        <input type="text" id="team_b_bonus" name="team_b_bonus" placeholder="Team b bonus" class="form-control" value="<%= @question.team_b_bonus %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Question
+      </button>
+      or
+      <a href="/questions/<%= @question.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

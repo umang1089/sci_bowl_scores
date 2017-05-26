@@ -1,0 +1,43 @@
+<div class="page-header">
+  <h3>Question #<%= @question.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Game</dt>
+      <dd><%= @question.game_id %></dd>
+
+      <dt>Team a tossup</dt>
+      <dd><%= @question.team_a_tossup %></dd>
+
+      <dt>Team a penalty</dt>
+      <dd><%= @question.team_a_penalty %></dd>
+
+      <dt>Team a bonus</dt>
+      <dd><%= @question.team_a_bonus %></dd>
+
+      <dt>Team b tossup</dt>
+      <dd><%= @question.team_b_tossup %></dd>
+
+      <dt>Team b penalty</dt>
+      <dd><%= @question.team_b_penalty %></dd>
+
+      <dt>Team b bonus</dt>
+      <dd><%= @question.team_b_bonus %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/questions" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/questions/<%= @question.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_question/<%= @question.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

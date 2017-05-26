@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @game.errors.any? %>
+  <% @game.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Game</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_game" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for team_a_id -->
+      <div class="form-group">
+        <label for="team_a_id" class="control-label">
+          Team a
+        </label>
+
+        <input type="text" id="team_a_id" name="team_a_id" placeholder="Team a" class="form-control" value="<%= @game.team_a_id %>">
+      </div>
+
+      <!-- Label and input for team_b_id -->
+      <div class="form-group">
+        <label for="team_b_id" class="control-label">
+          Team b
+        </label>
+
+        <input type="text" id="team_b_id" name="team_b_id" placeholder="Team b" class="form-control" value="<%= @game.team_b_id %>">
+      </div>
+
+      <!-- Label and input for team_a_score -->
+      <div class="form-group">
+        <label for="team_a_score" class="control-label">
+          Team a score
+        </label>
+
+        <input type="text" id="team_a_score" name="team_a_score" placeholder="Team a score" class="form-control" value="<%= @game.team_a_score %>">
+      </div>
+
+      <!-- Label and input for team_b_score -->
+      <div class="form-group">
+        <label for="team_b_score" class="control-label">
+          Team b score
+        </label>
+
+        <input type="text" id="team_b_score" name="team_b_score" placeholder="Team b score" class="form-control" value="<%= @game.team_b_score %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Game
+      </button>
+      or
+      <a href="/games">Cancel</a>
+    </form>
+  </div>
+</div>
