@@ -1,6 +1,8 @@
 class TeamsController < ApplicationController
   def index
-    @teams = Team.all
+
+    @school_id = current_school.id
+    @teams = Team.where(school_id: @school_id)
 
     render("teams/index.html.erb")
   end
