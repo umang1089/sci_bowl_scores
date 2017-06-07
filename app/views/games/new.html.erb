@@ -37,21 +37,22 @@
       </div>
 
       <!-- Label and input for team_a_score -->
-      <div class="form-group">
-        <label for="team_a_score" class="control-label">
-          Team a score
-        </label>
 
-        <input type="text" id="team_a_score" name="team_a_score" placeholder="Team a score" class="form-control" value="<%= @game.team_a_score %>">
+      <div class="form-group">
+        <!-- <label for="team_a_score" class="control-label">
+          Team a score
+        </label> -->
+
+        <input type="hidden" id="team_a_score" name="team_a_score"  value=0>
       </div>
 
       <!-- Label and input for team_b_score -->
       <div class="form-group">
-        <label for="team_b_score" class="control-label">
+        <!-- <label for="team_b_score" class="control-label">
           Team b score
-        </label>
+        </label> -->
 
-        <input type="text" id="team_b_score" name="team_b_score" placeholder="Team b score" class="form-control" value="<%= @game.team_b_score %>">
+        <input type="hidden" id="team_b_score" name="team_b_score"  value=0>
       </div>
 
       <button class="btn btn-success">
