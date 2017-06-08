@@ -79,7 +79,12 @@
         </tr>
         <% @game.questions.order(:id).each_with_index do |question,index| %>
         <tr>
-          <td><%= index+1 %></td>
+          <td>
+            <%= index+1 %>
+            <a href="/questions/<%= question.id %>/edit" class="pull-right">
+              Edit
+            </a>
+          </td>
         </tr>
         <% end %>
       </table>
