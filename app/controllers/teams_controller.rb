@@ -10,6 +10,12 @@ class TeamsController < ApplicationController
   def show
     @team = Team.find(params[:id])
 
+    @wins = @team.games_as_team_a.where("team_a_score > team_b_score").count + @team.games_as_team_b.where("team_b_score > team_a_score").count
+
+    @losses = @team.games_as_team_a.where("team_a_score < team_b_score").count + @team.games_as_team_b.where("team_b_score < team_a_score").count
+
+    @ties = @team.games_as_team_a.where("team_a_score = team_b_score").count + @team.games_as_team_b.where("team_b_score = team_a_score").count
+
     render("teams/show.html.erb")
   end
 

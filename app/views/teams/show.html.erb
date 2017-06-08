@@ -1,32 +1,42 @@
 <div class="page-header">
-  <h3>Team #<%= @team.id %></h3>
+  <h3><%= @team.school.name.titleize %> - <%= @team.tournament.name.titleize %></h3>
 </div>
 
 <div class="row">
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
-      <dt>School</dt>
-      <dd><%= @team.school_id %></dd>
-
-      <dt>Tournament</dt>
-      <dd><%= @team.tournament_id %></dd>
-
-      <dt>Player 1 name</dt>
+      <dt>Player 1</dt>
       <dd><%= @team.player_1_name %></dd>
 
-      <dt>Player 2 name</dt>
+      <dt>Player 2</dt>
       <dd><%= @team.player_2_name %></dd>
 
-      <dt>Player 3 name</dt>
+      <dt>Player 3</dt>
       <dd><%= @team.player_3_name %></dd>
 
-      <dt>Player 4 name</dt>
+      <dt>Player 4</dt>
       <dd><%= @team.player_4_name %></dd>
 
-      <dt>Player 5 name</dt>
+      <dt>Player 5</dt>
       <dd><%= @team.player_5_name %></dd>
 
     </dl>
+
+    <h3>Game History at <%= @team.tournament.name %></h2>
+    <hr>
+
+    <h4><%= @wins %> Wins, <%= @losses %> Losses, <%= @ties %> Ties</h4>
+
+    <ul>
+      <% @team.games_as_team_a.each do |game| %>
+      <li><a href="/games/<%= game.id %>"> Game recap vs. <%= game.team_b.school.name %></a></li>
+      <% end %>
+
+      <% @team.games_as_team_b.each do |game| %>
+      <li><a href="/games/<%= game.id %>"> Game recap vs. <%= game.team_a.school.name %></a></li>
+      <% end %>
+
+    </ul>
 
     <div class="btn-group btn-group-justified">
       <a href="/teams" class="btn btn-primary">
