@@ -1,21 +1,45 @@
 <div class="page-header">
-  <h3>Tournament #<%= @tournament.id %></h3>
+  <h3><%= @tournament.name %></h3>
+  <h4><%= @tournament.location %></h4>
+  <h4><%= @tournament.date %></h4>
+</div>
+
+
+<div class="container">
+  <h3> Teams </h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>School</th>
+        <th>Player 1</th>
+        <th>Player 2</th>
+        <th>Player 3</th>
+        <th>Player 4</th>
+        <th>Player 5</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @tournament.teams.each do |team| %>
+      <tr>
+        <td valign="middle"><b><%= team.school.name%> </b></td>
+        <td valign="middle"><%= team.player_1_name %></td>
+        <td valign="middle"><%= team.player_2_name %></td>
+        <td valign="middle"><%= team.player_3_name %></td>
+        <td valign="middle"><%= team.player_4_name %></td>
+        <td valign="middle"><%= team.player_5_name %></td>
+        <td>
+          <a href="/teams/<%= team.id %>"  class="btn btn-primary"> Team Details </a>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
 <div class="row">
   <div class="col-md-12 mb-2">
-    <dl class="dl-horizontal">
-      <dt>Name</dt>
-      <dd><%= @tournament.name %></dd>
-
-      <dt>Location</dt>
-      <dd><%= @tournament.location %></dd>
-
-      <dt>Date</dt>
-      <dd><%= @tournament.date %></dd>
-
-    </dl>
-
     <div class="btn-group btn-group-justified">
       <a href="/tournaments" class="btn btn-primary">
         Back

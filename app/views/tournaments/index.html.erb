@@ -21,9 +21,8 @@
         <td><%= tournament.location %></td>
         <td><%= tournament.date %></td>
         <td>
-          <a href="/tournaments/<%= tournament.id %>" class="btn btn-primary">Show</a>
+          <a href="/tournaments/<%= tournament.id %>" class="btn btn-primary">Show Details</a>
           <a href="/tournaments/<%= tournament.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_tournament/<%= tournament.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
         </td>
       </tr>
       <% end %>
