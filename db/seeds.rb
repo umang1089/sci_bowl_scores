@@ -156,3 +156,11 @@ e8.save
 
 
 puts "#{Team.count} teams in the datbase"
+
+# Blow up all other tables
+
+Game.destroy_all
+puts "Game data destroyed!"
+
+Question.destroy_all
+puts "Question data destroyed!"

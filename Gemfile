@@ -15,6 +15,11 @@ end
 # Devise for user authentication
 gem "devise"
 
+gem 'bcrypt', platforms: :ruby
+
+# Bootstrap toggles
+gem 'bootstrap-toggle-rails', '~> 2.2', '>= 2.2.1.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.3'
 # Use sqlite3 as the database for Active Record

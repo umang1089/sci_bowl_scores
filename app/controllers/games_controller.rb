@@ -8,6 +8,12 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
 
+    @game.team_a_score = @game.questions.sum(:team_a_tossup) + @game.questions.sum(:team_a_bonus) + @game.questions.sum(:team_a_penalty)
+
+    @game.team_b_score = @game.questions.sum(:team_b_tossup) + @game.questions.sum(:team_b_bonus) + @game.questions.sum(:team_b_penalty)
+
+    @game.save
+
     render("games/show.html.erb")
   end
 

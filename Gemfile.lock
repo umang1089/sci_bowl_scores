@@ -54,6 +54,7 @@ GEM
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
     bindex (0.5.0)
+    bootstrap-toggle-rails (2.2.1.0)
     builder (3.2.3)
     coderay (1.1.1)
     coffee-rails (4.2.2)
@@ -171,7 +172,9 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  bcrypt
   better_errors
+  bootstrap-toggle-rails (~> 2.2, >= 2.2.1.0)
   byebug
   coffee-rails (~> 4.2)
   devise
