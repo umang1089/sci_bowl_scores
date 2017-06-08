@@ -77,17 +77,47 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
 
     @question.game_id = params[:game_id]
-    @question.team_a_tossup = params[:team_a_tossup]
-    @question.team_a_penalty = params[:team_a_penalty]
-    @question.team_a_bonus = params[:team_a_bonus]
-    @question.team_b_tossup = params[:team_b_tossup]
-    @question.team_b_penalty = params[:team_b_penalty]
-    @question.team_b_bonus = params[:team_b_bonus]
+
+    if params[:team_a_tossup] == "on"
+      @question.team_a_tossup = 4
+    else
+      @question.team_a_tossup = 0
+    end
+
+    if params[:team_a_bonus] == "on"
+      @question.team_a_bonus = 10
+    else
+      @question.team_a_bonus = 0
+    end
+
+    if params[:team_b_tossup] == "on"
+      @question.team_b_tossup = 4
+    else
+      @question.team_b_tossup = 0
+    end
+
+    if params[:team_b_bonus] == "on"
+      @question.team_b_bonus = 10
+    else
+      @question.team_b_bonus = 0
+    end
+
+    if params[:team_a_penalty] == "on"
+      @question.team_b_penalty = 4
+    else
+      @question.team_b_penalty = 0
+    end
+
+    if params[:team_b_penalty] == "on"
+      @question.team_a_penalty = 4
+    else
+      @question.team_a_penalty = 0
+    end
 
     save_status = @question.save
 
     if save_status == true
-      redirect_to("/questions/#{@question.id}", :notice => "Question updated successfully.")
+      redirect_to("/games/#{@question.game.id}", :notice => "Question updated successfully.")
     else
       render("questions/edit.html.erb")
     end
