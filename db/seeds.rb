@@ -62,6 +62,12 @@ t1.location = "Bethesda, MD"
 t1.date = "4/28/2017"
 t1.save
 
+t2 = Tournament.new
+t2.name = "National Finals 2016"
+t2.location = "Bethesda, MD"
+t2.date = "5/4/2016"
+t2.save
+
 puts "#{Tournament.count} tournaments in the datbase"
 
 # Seed team data
@@ -107,6 +113,46 @@ e4.player_3_name = "Lamar Carson"
 e4.player_4_name = "Andres Rodgers"
 e4.player_5_name = "Thomas Singh"
 e4.save
+
+e5 = Team.new
+e5.school_id = s1.id
+e5.tournament_id = t2.id
+e5.player_1_name = "Michael Jones"
+e5.player_2_name = "Geoff Ramsey"
+e5.player_3_name = "Gavin Free"
+e5.player_4_name = "Ryan Haywood"
+e5.player_5_name = "Jeremy Dooley"
+e5.save
+
+e6 = Team.new
+e6.school_id = s2.id
+e6.tournament_id = t2.id
+e6.player_1_name = "Shawn Spencer"
+e6.player_2_name = "Burton Guster"
+e6.player_3_name = "Juliet O'Hara"
+e6.player_4_name = "Carlton Lasseter"
+e6.player_5_name = "Henry Spencer"
+e6.save
+
+e7 = Team.new
+e7.school_id = s3.id
+e7.tournament_id = t2.id
+e7.player_1_name = "James Willems"
+e7.player_2_name = "Adam Kovic"
+e7.player_3_name = "Bruce Greene"
+e7.player_4_name = "Lawrence Sonntag"
+e7.player_5_name = "Matt Peake"
+e7.save
+
+e8 = Team.new
+e8.school_id = s4.id
+e8.tournament_id = t2.id
+e8.player_1_name = "Philip Fry"
+e8.player_2_name = "Bender Rodriguez"
+e8.player_3_name = "Turanga Leela"
+e8.player_4_name = "Hermes Conrad"
+e8.player_5_name = "John Zoidberg"
+e8.save
 
 
 puts "#{Team.count} teams in the datbase"

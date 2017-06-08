@@ -12,10 +12,12 @@ class Game < ApplicationRecord
   validates :team_b_id, :presence => true
   validates :team_a_id, :presence => true
 
+  validate :same_tournament
 
-  # validates :same_tournament
-  #
-  # def same_tournament
-  #   errors.add(:team_a, "must be in the same tournament") if :team_a.tournament != :team_b.tournament
-  # end
+  def same_tournament
+    unless Team.find(team_a_id).tournament_id == Team.find(team_b_id).tournament_id
+      errors.add(:team_b, "must be in the same tournament as your first team")
+    end
+  end
+
 end

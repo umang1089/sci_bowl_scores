@@ -21,38 +21,21 @@
       <!-- Label and input for team_a_id -->
       <div class="form-group">
         <label for="team_a_id" class="control-label">
-          Team a
+          My Team
         </label>
 
-        <input type="text" id="team_a_id" name="team_a_id" placeholder="Team a" class="form-control" value="<%= @game.team_a_id %>">
+          <%= select_tag(:team_a_id, options_from_collection_for_select( Team.where(school_id: current_school.id), :id, :team_name, @game.team_a_id), :class => "form-control") %>
+
       </div>
 
       <!-- Label and input for team_b_id -->
       <div class="form-group">
         <label for="team_b_id" class="control-label">
-          Team b
+          Opponent
         </label>
 
-        <input type="text" id="team_b_id" name="team_b_id" placeholder="Team b" class="form-control" value="<%= @game.team_b_id %>">
-      </div>
+          <%= select_tag(:team_b_id, options_from_collection_for_select( Team.where.not(school_id: current_school.id), :id, :team_name, @game.team_b_id), :class => "form-control") %>
 
-      <!-- Label and input for team_a_score -->
-
-      <div class="form-group">
-        <!-- <label for="team_a_score" class="control-label">
-          Team a score
-        </label> -->
-
-        <input type="hidden" id="team_a_score" name="team_a_score"  value=0>
-      </div>
-
-      <!-- Label and input for team_b_score -->
-      <div class="form-group">
-        <!-- <label for="team_b_score" class="control-label">
-          Team b score
-        </label> -->
-
-        <input type="hidden" id="team_b_score" name="team_b_score"  value=0>
       </div>
 
       <button class="btn btn-success">

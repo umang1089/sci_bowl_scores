@@ -1,11 +1,11 @@
 <!-- Validation failure messages -->
 <% if @game.errors.any? %>
-  <% @game.errors.full_messages.each do |message| %>
-    <div class="alert alert-dismissable alert-danger">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <%= message %>
-    </div>
-  <% end %>
+<% @game.errors.full_messages.each do |message| %>
+<div class="alert alert-dismissable alert-danger">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <%= message %>
+</div>
+<% end %>
 <% end %>
 
 <div class="page-header">
@@ -21,44 +21,37 @@
       <!-- Label and input for team_a_id -->
       <div class="form-group">
         <label for="team_a_id" class="control-label">
-          Team a
+          My Team
         </label>
 
-        <input type="text" id="team_a_id" name="team_a_id" placeholder="Team a" class="form-control" value="<%= @game.team_a_id %>">
+        <%= select_tag(:team_a_id, options_from_collection_for_select( Team.where(school_id: current_school.id), :id, :team_name, @game.team_a_id), :class => "form-control") %>
+
       </div>
 
       <!-- Label and input for team_b_id -->
       <div class="form-group">
         <label for="team_b_id" class="control-label">
-          Team b
+          Opponent
         </label>
 
-        <input type="text" id="team_b_id" name="team_b_id" placeholder="Team b" class="form-control" value="<%= @game.team_b_id %>">
+        <%= select_tag(:team_b_id, options_from_collection_for_select( Team.where.not(school_id: current_school.id), :id, :team_name, @game.team_b_id), :class => "form-control") %>
       </div>
 
-      <!-- Label and input for team_a_score -->
-      <div class="form-group">
-        <label for="team_a_score" class="control-label">
-          Team a score
-        </label>
+      <!-- Hidden inputs for scores -->
+      <!-- In edit page, inherit existing scores rather than reset to 0 -->
+      <input type="hidden" id="team_a_score" name="team_a_score"  value="<%= @game.team_a_score %>">
+      <input type="hidden" id="team_b_score" name="team_b_score"  value="<%= @game.team_b_score %>">
 
-        <input type="text" id="team_a_score" name="team_a_score" placeholder="Team a score" class="form-control" value="<%= @game.team_a_score %>">
-      </div>
 
-      <!-- Label and input for team_b_score -->
-      <div class="form-group">
-        <label for="team_b_score" class="control-label">
-          Team b score
-        </label>
 
-        <input type="text" id="team_b_score" name="team_b_score" placeholder="Team b score" class="form-control" value="<%= @game.team_b_score %>">
-      </div>
+      <input type="text" id="team_b_score" name="team_b_score" placeholder="Team b score" class="form-control" value="<%= @game.team_b_score %>">
+    </div> -->
 
-      <button class="btn btn-warning">
-        Update Game
-      </button>
-      or
-      <a href="/games/<%= @game.id %>">Cancel</a>
-    </form>
-  </div>
+    <button class="btn btn-warning">
+      Update Game
+    </button>
+    or
+    <a href="/games/<%= @game.id %>">Cancel</a>
+  </form>
+</div>
 </div>
