@@ -130,8 +130,8 @@ e6.tournament_id = t2.id
 e6.player_1_name = "Shawn Spencer"
 e6.player_2_name = "Burton Guster"
 e6.player_3_name = "Juliet O'Hara"
-e6.player_4_name = "Carlton Lasseter"
-e6.player_5_name = "Henry Spencer"
+e6.player_4_name = "Carlton Lassiter"
+e6.player_5_name = "Karen Vick"
 e6.save
 
 e7 = Team.new
@@ -157,10 +157,957 @@ e8.save
 
 puts "#{Team.count} teams in the datbase"
 
-# Blow up all other tables
+# Recreate games and questions data
+# Games below simulated in Excel
 
 Game.destroy_all
 puts "Game data destroyed!"
 
 Question.destroy_all
 puts "Question data destroyed!"
+
+g1 = Game.new
+g1.team_a_id = e1.id
+g1.team_b_id = e2.id
+g1.team_a_score=130
+g1.team_b_score=36
+g1.save
+
+  q1 = Question.new
+  q1.game_id = g1.id
+  q1.team_a_tossup = 0
+  q1.team_a_bonus = 0
+  q1.team_a_penalty = 0
+  q1.team_b_tossup = 4
+  q1.team_b_bonus = 0
+  q1.team_b_penalty = 0
+  q1.save
+  q2 = Question.new
+  q2.game_id = g1.id
+  q2.team_a_tossup = 0
+  q2.team_a_bonus = 0
+  q2.team_a_penalty = 0
+  q2.team_b_tossup = 4
+  q2.team_b_bonus = 0
+  q2.team_b_penalty = 4
+  q2.save
+  q3 = Question.new
+  q3.game_id = g1.id
+  q3.team_a_tossup = 4
+  q3.team_a_bonus = 10
+  q3.team_a_penalty = 0
+  q3.team_b_tossup = 0
+  q3.team_b_bonus = 0
+  q3.team_b_penalty = 4
+  q3.save
+  q4 = Question.new
+  q4.game_id = g1.id
+  q4.team_a_tossup = 4
+  q4.team_a_bonus = 0
+  q4.team_a_penalty = 0
+  q4.team_b_tossup = 0
+  q4.team_b_bonus = 0
+  q4.team_b_penalty = 0
+  q4.save
+  q5 = Question.new
+  q5.game_id = g1.id
+  q5.team_a_tossup = 0
+  q5.team_a_bonus = 0
+  q5.team_a_penalty = 0
+  q5.team_b_tossup = 4
+  q5.team_b_bonus = 0
+  q5.team_b_penalty = 0
+  q5.save
+  q6 = Question.new
+  q6.game_id = g1.id
+  q6.team_a_tossup = 4
+  q6.team_a_bonus = 0
+  q6.team_a_penalty = 0
+  q6.team_b_tossup = 0
+  q6.team_b_bonus = 0
+  q6.team_b_penalty = 0
+  q6.save
+  q7 = Question.new
+  q7.game_id = g1.id
+  q7.team_a_tossup = 4
+  q7.team_a_bonus = 10
+  q7.team_a_penalty = 0
+  q7.team_b_tossup = 0
+  q7.team_b_bonus = 0
+  q7.team_b_penalty = 0
+  q7.save
+  q8 = Question.new
+  q8.game_id = g1.id
+  q8.team_a_tossup = 0
+  q8.team_a_bonus = 0
+  q8.team_a_penalty = 0
+  q8.team_b_tossup = 0
+  q8.team_b_bonus = 0
+  q8.team_b_penalty = 4
+  q8.save
+  q9 = Question.new
+  q9.game_id = g1.id
+  q9.team_a_tossup = 4
+  q9.team_a_bonus = 10
+  q9.team_a_penalty = 0
+  q9.team_b_tossup = 0
+  q9.team_b_bonus = 0
+  q9.team_b_penalty = 0
+  q9.save
+  q10 = Question.new
+  q10.game_id = g1.id
+  q10.team_a_tossup = 4
+  q10.team_a_bonus = 10
+  q10.team_a_penalty = 0
+  q10.team_b_tossup = 0
+  q10.team_b_bonus = 0
+  q10.team_b_penalty = 4
+  q10.save
+  q11 = Question.new
+  q11.game_id = g1.id
+  q11.team_a_tossup = 4
+  q11.team_a_bonus = 10
+  q11.team_a_penalty = 0
+  q11.team_b_tossup = 0
+  q11.team_b_bonus = 0
+  q11.team_b_penalty = 0
+  q11.save
+  q12 = Question.new
+  q12.game_id = g1.id
+  q12.team_a_tossup = 4
+  q12.team_a_bonus = 10
+  q12.team_a_penalty = 0
+  q12.team_b_tossup = 0
+  q12.team_b_bonus = 0
+  q12.team_b_penalty = 0
+  q12.save
+  q13 = Question.new
+  q13.game_id = g1.id
+  q13.team_a_tossup = 4
+  q13.team_a_bonus = 0
+  q13.team_a_penalty = 0
+  q13.team_b_tossup = 0
+  q13.team_b_bonus = 0
+  q13.team_b_penalty = 0
+  q13.save
+  q14 = Question.new
+  q14.game_id = g1.id
+  q14.team_a_tossup = 4
+  q14.team_a_bonus = 0
+  q14.team_a_penalty = 0
+  q14.team_b_tossup = 0
+  q14.team_b_bonus = 0
+  q14.team_b_penalty = 0
+  q14.save
+  q15 = Question.new
+  q15.game_id = g1.id
+  q15.team_a_tossup = 4
+  q15.team_a_bonus = 0
+  q15.team_a_penalty = 0
+  q15.team_b_tossup = 0
+  q15.team_b_bonus = 0
+  q15.team_b_penalty = 0
+  q15.save
+  q16 = Question.new
+  q16.game_id = g1.id
+  q16.team_a_tossup = 4
+  q16.team_a_bonus = 10
+  q16.team_a_penalty = 0
+  q16.team_b_tossup = 0
+  q16.team_b_bonus = 0
+  q16.team_b_penalty = 0
+  q16.save
+  q17 = Question.new
+  q17.game_id = g1.id
+  q17.team_a_tossup = 0
+  q17.team_a_bonus = 0
+  q17.team_a_penalty = 0
+  q17.team_b_tossup = 4
+  q17.team_b_bonus = 0
+  q17.team_b_penalty = 0
+  q17.save
+  q18 = Question.new
+  q18.game_id = g1.id
+  q18.team_a_tossup = 4
+  q18.team_a_bonus = 0
+  q18.team_a_penalty = 4
+  q18.team_b_tossup = 0
+  q18.team_b_bonus = 0
+  q18.team_b_penalty = 0
+  q18.save
+  q19 = Question.new
+  q19.game_id = g1.id
+  q19.team_a_tossup = 0
+  q19.team_a_bonus = 0
+  q19.team_a_penalty = 0
+  q19.team_b_tossup = 0
+  q19.team_b_bonus = 0
+  q19.team_b_penalty = 0
+  q19.save
+  q20 = Question.new
+  q20.game_id = g1.id
+  q20.team_a_tossup = 4
+  q20.team_a_bonus = 0
+  q20.team_a_penalty = 0
+  q20.team_b_tossup = 0
+  q20.team_b_bonus = 0
+  q20.team_b_penalty = 4
+  q20.save
+
+
+g2 = Game.new
+g2.team_a_id = e1.id
+g2.team_b_id = e3.id
+g2.team_a_score=102
+g2.team_b_score=80
+g2.save
+
+  q1 = Question.new
+  q1.game_id = g2.id
+  q1.team_a_tossup = 4
+  q1.team_a_bonus = 0
+  q1.team_a_penalty = 0
+  q1.team_b_tossup = 0
+  q1.team_b_bonus = 0
+  q1.team_b_penalty = 0
+  q1.save
+  q2 = Question.new
+  q2.game_id = g2.id
+  q2.team_a_tossup = 0
+  q2.team_a_bonus = 0
+  q2.team_a_penalty = 0
+  q2.team_b_tossup = 0
+  q2.team_b_bonus = 0
+  q2.team_b_penalty = 0
+  q2.save
+  q3 = Question.new
+  q3.game_id = g2.id
+  q3.team_a_tossup = 4
+  q3.team_a_bonus = 10
+  q3.team_a_penalty = 0
+  q3.team_b_tossup = 0
+  q3.team_b_bonus = 0
+  q3.team_b_penalty = 4
+  q3.save
+  q4 = Question.new
+  q4.game_id = g2.id
+  q4.team_a_tossup = 4
+  q4.team_a_bonus = 0
+  q4.team_a_penalty = 0
+  q4.team_b_tossup = 0
+  q4.team_b_bonus = 0
+  q4.team_b_penalty = 4
+  q4.save
+  q5 = Question.new
+  q5.game_id = g2.id
+  q5.team_a_tossup = 4
+  q5.team_a_bonus = 10
+  q5.team_a_penalty = 0
+  q5.team_b_tossup = 0
+  q5.team_b_bonus = 0
+  q5.team_b_penalty = 0
+  q5.save
+  q6 = Question.new
+  q6.game_id = g2.id
+  q6.team_a_tossup = 4
+  q6.team_a_bonus = 10
+  q6.team_a_penalty = 0
+  q6.team_b_tossup = 0
+  q6.team_b_bonus = 0
+  q6.team_b_penalty = 0
+  q6.save
+  q7 = Question.new
+  q7.game_id = g2.id
+  q7.team_a_tossup = 0
+  q7.team_a_bonus = 0
+  q7.team_a_penalty = 0
+  q7.team_b_tossup = 4
+  q7.team_b_bonus = 10
+  q7.team_b_penalty = 0
+  q7.save
+  q8 = Question.new
+  q8.game_id = g2.id
+  q8.team_a_tossup = 0
+  q8.team_a_bonus = 0
+  q8.team_a_penalty = 0
+  q8.team_b_tossup = 4
+  q8.team_b_bonus = 0
+  q8.team_b_penalty = 0
+  q8.save
+  q9 = Question.new
+  q9.game_id = g2.id
+  q9.team_a_tossup = 4
+  q9.team_a_bonus = 0
+  q9.team_a_penalty = 0
+  q9.team_b_tossup = 0
+  q9.team_b_bonus = 0
+  q9.team_b_penalty = 0
+  q9.save
+  q10 = Question.new
+  q10.game_id = g2.id
+  q10.team_a_tossup = 0
+  q10.team_a_bonus = 0
+  q10.team_a_penalty = 0
+  q10.team_b_tossup = 4
+  q10.team_b_bonus = 10
+  q10.team_b_penalty = 0
+  q10.save
+  q11 = Question.new
+  q11.game_id = g2.id
+  q11.team_a_tossup = 0
+  q11.team_a_bonus = 0
+  q11.team_a_penalty = 0
+  q11.team_b_tossup = 0
+  q11.team_b_bonus = 0
+  q11.team_b_penalty = 4
+  q11.save
+  q12 = Question.new
+  q12.game_id = g2.id
+  q12.team_a_tossup = 4
+  q12.team_a_bonus = 0
+  q12.team_a_penalty = 4
+  q12.team_b_tossup = 0
+  q12.team_b_bonus = 0
+  q12.team_b_penalty = 0
+  q12.save
+  q13 = Question.new
+  q13.game_id = g2.id
+  q13.team_a_tossup = 0
+  q13.team_a_bonus = 0
+  q13.team_a_penalty = 0
+  q13.team_b_tossup = 4
+  q13.team_b_bonus = 10
+  q13.team_b_penalty = 0
+  q13.save
+  q14 = Question.new
+  q14.game_id = g2.id
+  q14.team_a_tossup = 0
+  q14.team_a_bonus = 0
+  q14.team_a_penalty = 0
+  q14.team_b_tossup = 4
+  q14.team_b_bonus = 10
+  q14.team_b_penalty = 0
+  q14.save
+  q15 = Question.new
+  q15.game_id = g2.id
+  q15.team_a_tossup = 0
+  q15.team_a_bonus = 0
+  q15.team_a_penalty = 0
+  q15.team_b_tossup = 0
+  q15.team_b_bonus = 0
+  q15.team_b_penalty = 4
+  q15.save
+  q16 = Question.new
+  q16.game_id = g2.id
+  q16.team_a_tossup = 4
+  q16.team_a_bonus = 10
+  q16.team_a_penalty = 0
+  q16.team_b_tossup = 0
+  q16.team_b_bonus = 0
+  q16.team_b_penalty = 0
+  q16.save
+  q17 = Question.new
+  q17.game_id = g2.id
+  q17.team_a_tossup = 4
+  q17.team_a_bonus = 0
+  q17.team_a_penalty = 0
+  q17.team_b_tossup = 0
+  q17.team_b_bonus = 0
+  q17.team_b_penalty = 0
+  q17.save
+  q18 = Question.new
+  q18.game_id = g2.id
+  q18.team_a_tossup = 4
+  q18.team_a_bonus = 10
+  q18.team_a_penalty = 0
+  q18.team_b_tossup = 0
+  q18.team_b_bonus = 0
+  q18.team_b_penalty = 0
+  q18.save
+  q19 = Question.new
+  q19.game_id = g2.id
+  q19.team_a_tossup = 0
+  q19.team_a_bonus = 0
+  q19.team_a_penalty = 4
+  q19.team_b_tossup = 4
+  q19.team_b_bonus = 0
+  q19.team_b_penalty = 0
+  q19.save
+  q20 = Question.new
+  q20.game_id = g2.id
+  q20.team_a_tossup = 4
+  q20.team_a_bonus = 0
+  q20.team_a_penalty = 0
+  q20.team_b_tossup = 0
+  q20.team_b_bonus = 0
+  q20.team_b_penalty = 0
+  q20.save
+
+
+g3 = Game.new
+g3.team_a_id = e2.id
+g3.team_b_id = e3.id
+g3.team_a_score=104
+g3.team_b_score=48
+g3.save
+
+  q1 = Question.new
+  q1.game_id = g3.id
+  q1.team_a_tossup = 4
+  q1.team_a_bonus = 0
+  q1.team_a_penalty = 0
+  q1.team_b_tossup = 0
+  q1.team_b_bonus = 0
+  q1.team_b_penalty = 0
+  q1.save
+  q2 = Question.new
+  q2.game_id = g3.id
+  q2.team_a_tossup = 0
+  q2.team_a_bonus = 0
+  q2.team_a_penalty = 0
+  q2.team_b_tossup = 4
+  q2.team_b_bonus = 0
+  q2.team_b_penalty = 0
+  q2.save
+  q3 = Question.new
+  q3.game_id = g3.id
+  q3.team_a_tossup = 4
+  q3.team_a_bonus = 10
+  q3.team_a_penalty = 0
+  q3.team_b_tossup = 0
+  q3.team_b_bonus = 0
+  q3.team_b_penalty = 0
+  q3.save
+  q4 = Question.new
+  q4.game_id = g3.id
+  q4.team_a_tossup = 4
+  q4.team_a_bonus = 0
+  q4.team_a_penalty = 0
+  q4.team_b_tossup = 0
+  q4.team_b_bonus = 0
+  q4.team_b_penalty = 0
+  q4.save
+  q5 = Question.new
+  q5.game_id = g3.id
+  q5.team_a_tossup = 4
+  q5.team_a_bonus = 0
+  q5.team_a_penalty = 0
+  q5.team_b_tossup = 0
+  q5.team_b_bonus = 0
+  q5.team_b_penalty = 4
+  q5.save
+  q6 = Question.new
+  q6.game_id = g3.id
+  q6.team_a_tossup = 4
+  q6.team_a_bonus = 0
+  q6.team_a_penalty = 0
+  q6.team_b_tossup = 0
+  q6.team_b_bonus = 0
+  q6.team_b_penalty = 0
+  q6.save
+  q7 = Question.new
+  q7.game_id = g3.id
+  q7.team_a_tossup = 4
+  q7.team_a_bonus = 0
+  q7.team_a_penalty = 0
+  q7.team_b_tossup = 0
+  q7.team_b_bonus = 0
+  q7.team_b_penalty = 0
+  q7.save
+  q8 = Question.new
+  q8.game_id = g3.id
+  q8.team_a_tossup = 0
+  q8.team_a_bonus = 0
+  q8.team_a_penalty = 0
+  q8.team_b_tossup = 0
+  q8.team_b_bonus = 0
+  q8.team_b_penalty = 0
+  q8.save
+  q9 = Question.new
+  q9.game_id = g3.id
+  q9.team_a_tossup = 4
+  q9.team_a_bonus = 0
+  q9.team_a_penalty = 4
+  q9.team_b_tossup = 0
+  q9.team_b_bonus = 0
+  q9.team_b_penalty = 4
+  q9.save
+  q10 = Question.new
+  q10.game_id = g3.id
+  q10.team_a_tossup = 4
+  q10.team_a_bonus = 0
+  q10.team_a_penalty = 0
+  q10.team_b_tossup = 0
+  q10.team_b_bonus = 0
+  q10.team_b_penalty = 0
+  q10.save
+  q11 = Question.new
+  q11.game_id = g3.id
+  q11.team_a_tossup = 4
+  q11.team_a_bonus = 10
+  q11.team_a_penalty = 0
+  q11.team_b_tossup = 0
+  q11.team_b_bonus = 0
+  q11.team_b_penalty = 4
+  q11.save
+  q12 = Question.new
+  q12.game_id = g3.id
+  q12.team_a_tossup = 0
+  q12.team_a_bonus = 0
+  q12.team_a_penalty = 0
+  q12.team_b_tossup = 4
+  q12.team_b_bonus = 10
+  q12.team_b_penalty = 0
+  q12.save
+  q13 = Question.new
+  q13.game_id = g3.id
+  q13.team_a_tossup = 4
+  q13.team_a_bonus = 10
+  q13.team_a_penalty = 4
+  q13.team_b_tossup = 0
+  q13.team_b_bonus = 0
+  q13.team_b_penalty = 0
+  q13.save
+  q14 = Question.new
+  q14.game_id = g3.id
+  q14.team_a_tossup = 4
+  q14.team_a_bonus = 0
+  q14.team_a_penalty = 0
+  q14.team_b_tossup = 0
+  q14.team_b_bonus = 0
+  q14.team_b_penalty = 0
+  q14.save
+  q15 = Question.new
+  q15.game_id = g3.id
+  q15.team_a_tossup = 0
+  q15.team_a_bonus = 0
+  q15.team_a_penalty = 0
+  q15.team_b_tossup = 4
+  q15.team_b_bonus = 0
+  q15.team_b_penalty = 0
+  q15.save
+  q16 = Question.new
+  q16.game_id = g3.id
+  q16.team_a_tossup = 0
+  q16.team_a_bonus = 0
+  q16.team_a_penalty = 0
+  q16.team_b_tossup = 0
+  q16.team_b_bonus = 0
+  q16.team_b_penalty = 0
+  q16.save
+  q17 = Question.new
+  q17.game_id = g3.id
+  q17.team_a_tossup = 0
+  q17.team_a_bonus = 0
+  q17.team_a_penalty = 0
+  q17.team_b_tossup = 4
+  q17.team_b_bonus = 10
+  q17.team_b_penalty = 0
+  q17.save
+  q18 = Question.new
+  q18.game_id = g3.id
+  q18.team_a_tossup = 4
+  q18.team_a_bonus = 0
+  q18.team_a_penalty = 0
+  q18.team_b_tossup = 0
+  q18.team_b_bonus = 0
+  q18.team_b_penalty = 0
+  q18.save
+  q19 = Question.new
+  q19.game_id = g3.id
+  q19.team_a_tossup = 4
+  q19.team_a_bonus = 0
+  q19.team_a_penalty = 0
+  q19.team_b_tossup = 0
+  q19.team_b_bonus = 0
+  q19.team_b_penalty = 0
+  q19.save
+  q20 = Question.new
+  q20.game_id = g3.id
+  q20.team_a_tossup = 4
+  q20.team_a_bonus = 10
+  q20.team_a_penalty = 0
+  q20.team_b_tossup = 0
+  q20.team_b_bonus = 0
+  q20.team_b_penalty = 0
+  q20.save
+
+
+g4 = Game.new
+g4.team_a_id = e2.id
+g4.team_b_id = e4.id
+g4.team_a_score=92
+g4.team_b_score=70
+g4.save
+
+  q1 = Question.new
+  q1.game_id = g4.id
+  q1.team_a_tossup = 0
+  q1.team_a_bonus = 0
+  q1.team_a_penalty = 4
+  q1.team_b_tossup = 4
+  q1.team_b_bonus = 0
+  q1.team_b_penalty = 0
+  q1.save
+  q2 = Question.new
+  q2.game_id = g4.id
+  q2.team_a_tossup = 4
+  q2.team_a_bonus = 0
+  q2.team_a_penalty = 4
+  q2.team_b_tossup = 0
+  q2.team_b_bonus = 0
+  q2.team_b_penalty = 0
+  q2.save
+  q3 = Question.new
+  q3.game_id = g4.id
+  q3.team_a_tossup = 0
+  q3.team_a_bonus = 0
+  q3.team_a_penalty = 0
+  q3.team_b_tossup = 4
+  q3.team_b_bonus = 10
+  q3.team_b_penalty = 4
+  q3.save
+  q4 = Question.new
+  q4.game_id = g4.id
+  q4.team_a_tossup = 0
+  q4.team_a_bonus = 0
+  q4.team_a_penalty = 0
+  q4.team_b_tossup = 4
+  q4.team_b_bonus = 10
+  q4.team_b_penalty = 0
+  q4.save
+  q5 = Question.new
+  q5.game_id = g4.id
+  q5.team_a_tossup = 0
+  q5.team_a_bonus = 0
+  q5.team_a_penalty = 0
+  q5.team_b_tossup = 4
+  q5.team_b_bonus = 0
+  q5.team_b_penalty = 0
+  q5.save
+  q6 = Question.new
+  q6.game_id = g4.id
+  q6.team_a_tossup = 0
+  q6.team_a_bonus = 0
+  q6.team_a_penalty = 0
+  q6.team_b_tossup = 4
+  q6.team_b_bonus = 0
+  q6.team_b_penalty = 0
+  q6.save
+  q7 = Question.new
+  q7.game_id = g4.id
+  q7.team_a_tossup = 4
+  q7.team_a_bonus = 0
+  q7.team_a_penalty = 0
+  q7.team_b_tossup = 0
+  q7.team_b_bonus = 0
+  q7.team_b_penalty = 0
+  q7.save
+  q8 = Question.new
+  q8.game_id = g4.id
+  q8.team_a_tossup = 0
+  q8.team_a_bonus = 0
+  q8.team_a_penalty = 0
+  q8.team_b_tossup = 0
+  q8.team_b_bonus = 0
+  q8.team_b_penalty = 0
+  q8.save
+  q9 = Question.new
+  q9.game_id = g4.id
+  q9.team_a_tossup = 4
+  q9.team_a_bonus = 0
+  q9.team_a_penalty = 0
+  q9.team_b_tossup = 0
+  q9.team_b_bonus = 0
+  q9.team_b_penalty = 0
+  q9.save
+  q10 = Question.new
+  q10.game_id = g4.id
+  q10.team_a_tossup = 4
+  q10.team_a_bonus = 10
+  q10.team_a_penalty = 0
+  q10.team_b_tossup = 0
+  q10.team_b_bonus = 0
+  q10.team_b_penalty = 0
+  q10.save
+  q11 = Question.new
+  q11.game_id = g4.id
+  q11.team_a_tossup = 4
+  q11.team_a_bonus = 0
+  q11.team_a_penalty = 0
+  q11.team_b_tossup = 0
+  q11.team_b_bonus = 0
+  q11.team_b_penalty = 4
+  q11.save
+  q12 = Question.new
+  q12.game_id = g4.id
+  q12.team_a_tossup = 4
+  q12.team_a_bonus = 10
+  q12.team_a_penalty = 0
+  q12.team_b_tossup = 0
+  q12.team_b_bonus = 0
+  q12.team_b_penalty = 0
+  q12.save
+  q13 = Question.new
+  q13.game_id = g4.id
+  q13.team_a_tossup = 0
+  q13.team_a_bonus = 0
+  q13.team_a_penalty = 0
+  q13.team_b_tossup = 0
+  q13.team_b_bonus = 0
+  q13.team_b_penalty = 0
+  q13.save
+  q14 = Question.new
+  q14.game_id = g4.id
+  q14.team_a_tossup = 0
+  q14.team_a_bonus = 0
+  q14.team_a_penalty = 0
+  q14.team_b_tossup = 4
+  q14.team_b_bonus = 0
+  q14.team_b_penalty = 0
+  q14.save
+  q15 = Question.new
+  q15.game_id = g4.id
+  q15.team_a_tossup = 0
+  q15.team_a_bonus = 0
+  q15.team_a_penalty = 0
+  q15.team_b_tossup = 4
+  q15.team_b_bonus = 10
+  q15.team_b_penalty = 0
+  q15.save
+  q16 = Question.new
+  q16.game_id = g4.id
+  q16.team_a_tossup = 4
+  q16.team_a_bonus = 0
+  q16.team_a_penalty = 0
+  q16.team_b_tossup = 0
+  q16.team_b_bonus = 0
+  q16.team_b_penalty = 4
+  q16.save
+  q17 = Question.new
+  q17.game_id = g4.id
+  q17.team_a_tossup = 4
+  q17.team_a_bonus = 10
+  q17.team_a_penalty = 0
+  q17.team_b_tossup = 0
+  q17.team_b_bonus = 0
+  q17.team_b_penalty = 0
+  q17.save
+  q18 = Question.new
+  q18.game_id = g4.id
+  q18.team_a_tossup = 4
+  q18.team_a_bonus = 0
+  q18.team_a_penalty = 0
+  q18.team_b_tossup = 0
+  q18.team_b_bonus = 0
+  q18.team_b_penalty = 0
+  q18.save
+  q19 = Question.new
+  q19.game_id = g4.id
+  q19.team_a_tossup = 4
+  q19.team_a_bonus = 0
+  q19.team_a_penalty = 0
+  q19.team_b_tossup = 0
+  q19.team_b_bonus = 0
+  q19.team_b_penalty = 0
+  q19.save
+  q20 = Question.new
+  q20.game_id = g4.id
+  q20.team_a_tossup = 4
+  q20.team_a_bonus = 10
+  q20.team_a_penalty = 0
+  q20.team_b_tossup = 0
+  q20.team_b_bonus = 0
+  q20.team_b_penalty = 0
+  q20.save
+
+g5 = Game.new
+g5.team_a_id = e4.id
+g5.team_b_id = e3.id
+g5.team_a_score=84
+g5.team_b_score=86
+g5.save
+
+  q1 = Question.new
+  q1.game_id = g5.id
+  q1.team_a_tossup = 0
+  q1.team_a_bonus = 0
+  q1.team_a_penalty = 0
+  q1.team_b_tossup = 4
+  q1.team_b_bonus = 10
+  q1.team_b_penalty = 0
+  q1.save
+  q2 = Question.new
+  q2.game_id = g5.id
+  q2.team_a_tossup = 0
+  q2.team_a_bonus = 0
+  q2.team_a_penalty = 0
+  q2.team_b_tossup = 4
+  q2.team_b_bonus = 0
+  q2.team_b_penalty = 0
+  q2.save
+  q3 = Question.new
+  q3.game_id = g5.id
+  q3.team_a_tossup = 0
+  q3.team_a_bonus = 0
+  q3.team_a_penalty = 0
+  q3.team_b_tossup = 0
+  q3.team_b_bonus = 0
+  q3.team_b_penalty = 0
+  q3.save
+  q4 = Question.new
+  q4.game_id = g5.id
+  q4.team_a_tossup = 0
+  q4.team_a_bonus = 0
+  q4.team_a_penalty = 0
+  q4.team_b_tossup = 4
+  q4.team_b_bonus = 10
+  q4.team_b_penalty = 0
+  q4.save
+  q5 = Question.new
+  q5.game_id = g5.id
+  q5.team_a_tossup = 4
+  q5.team_a_bonus = 10
+  q5.team_a_penalty = 0
+  q5.team_b_tossup = 0
+  q5.team_b_bonus = 0
+  q5.team_b_penalty = 0
+  q5.save
+  q6 = Question.new
+  q6.game_id = g5.id
+  q6.team_a_tossup = 4
+  q6.team_a_bonus = 0
+  q6.team_a_penalty = 0
+  q6.team_b_tossup = 0
+  q6.team_b_bonus = 0
+  q6.team_b_penalty = 0
+  q6.save
+  q7 = Question.new
+  q7.game_id = g5.id
+  q7.team_a_tossup = 4
+  q7.team_a_bonus = 10
+  q7.team_a_penalty = 0
+  q7.team_b_tossup = 0
+  q7.team_b_bonus = 0
+  q7.team_b_penalty = 0
+  q7.save
+  q8 = Question.new
+  q8.game_id = g5.id
+  q8.team_a_tossup = 0
+  q8.team_a_bonus = 0
+  q8.team_a_penalty = 0
+  q8.team_b_tossup = 4
+  q8.team_b_bonus = 0
+  q8.team_b_penalty = 0
+  q8.save
+  q9 = Question.new
+  q9.game_id = g5.id
+  q9.team_a_tossup = 4
+  q9.team_a_bonus = 0
+  q9.team_a_penalty = 0
+  q9.team_b_tossup = 0
+  q9.team_b_bonus = 0
+  q9.team_b_penalty = 0
+  q9.save
+  q10 = Question.new
+  q10.game_id = g5.id
+  q10.team_a_tossup = 4
+  q10.team_a_bonus = 0
+  q10.team_a_penalty = 0
+  q10.team_b_tossup = 0
+  q10.team_b_bonus = 0
+  q10.team_b_penalty = 0
+  q10.save
+  q11 = Question.new
+  q11.game_id = g5.id
+  q11.team_a_tossup = 4
+  q11.team_a_bonus = 0
+  q11.team_a_penalty = 0
+  q11.team_b_tossup = 0
+  q11.team_b_bonus = 0
+  q11.team_b_penalty = 0
+  q11.save
+  q12 = Question.new
+  q12.game_id = g5.id
+  q12.team_a_tossup = 0
+  q12.team_a_bonus = 0
+  q12.team_a_penalty = 0
+  q12.team_b_tossup = 4
+  q12.team_b_bonus = 10
+  q12.team_b_penalty = 4
+  q12.save
+  q13 = Question.new
+  q13.game_id = g5.id
+  q13.team_a_tossup = 4
+  q13.team_a_bonus = 0
+  q13.team_a_penalty = 4
+  q13.team_b_tossup = 0
+  q13.team_b_bonus = 0
+  q13.team_b_penalty = 0
+  q13.save
+  q14 = Question.new
+  q14.game_id = g5.id
+  q14.team_a_tossup = 0
+  q14.team_a_bonus = 0
+  q14.team_a_penalty = 0
+  q14.team_b_tossup = 0
+  q14.team_b_bonus = 0
+  q14.team_b_penalty = 0
+  q14.save
+  q15 = Question.new
+  q15.game_id = g5.id
+  q15.team_a_tossup = 0
+  q15.team_a_bonus = 0
+  q15.team_a_penalty = 0
+  q15.team_b_tossup = 4
+  q15.team_b_bonus = 0
+  q15.team_b_penalty = 0
+  q15.save
+  q16 = Question.new
+  q16.game_id = g5.id
+  q16.team_a_tossup = 0
+  q16.team_a_bonus = 0
+  q16.team_a_penalty = 0
+  q16.team_b_tossup = 4
+  q16.team_b_bonus = 10
+  q16.team_b_penalty = 0
+  q16.save
+  q17 = Question.new
+  q17.game_id = g5.id
+  q17.team_a_tossup = 4
+  q17.team_a_bonus = 10
+  q17.team_a_penalty = 0
+  q17.team_b_tossup = 0
+  q17.team_b_bonus = 0
+  q17.team_b_penalty = 0
+  q17.save
+  q18 = Question.new
+  q18.game_id = g5.id
+  q18.team_a_tossup = 4
+  q18.team_a_bonus = 0
+  q18.team_a_penalty = 0
+  q18.team_b_tossup = 0
+  q18.team_b_bonus = 0
+  q18.team_b_penalty = 0
+  q18.save
+  q19 = Question.new
+  q19.game_id = g5.id
+  q19.team_a_tossup = 4
+  q19.team_a_bonus = 10
+  q19.team_a_penalty = 0
+  q19.team_b_tossup = 0
+  q19.team_b_bonus = 0
+  q19.team_b_penalty = 0
+  q19.save
+
+  q20 = Question.new
+  q20.game_id = g5.id
+  q20.team_a_tossup = 0
+  q20.team_a_bonus = 0
+  q20.team_a_penalty = 0
+  q20.team_b_tossup = 4
+  q20.team_b_bonus = 10
+  q20.team_b_penalty = 0
+  q20.save
+
+puts "#{Game.count} games with #{Question.count} questions in the datbase"
