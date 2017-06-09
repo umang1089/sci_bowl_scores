@@ -38,6 +38,37 @@
   </table>
 </div>
 
+
+<div class="container">
+  <h3> Games </h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Team A</th>
+        <th>Score</th>
+        <th>Team B</th>
+        <th>Score</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @tournament.games.each do |game| %>
+      <tr>
+        <td valign="middle"><b><%= game.team_a.school.name%> </b></td>
+        <td valign="middle"><%= game.team_a_score %></td>
+        <td valign="middle"><b><%= game.team_b.school.name %></b></td>
+        <td valign="middle"><%= game.team_b_score %></td>
+        <td>
+          <a href="/games/<%= game.id %>"  class="btn btn-primary"> Game Details </a>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
 <div class="row">
   <div class="col-md-12 mb-2">
     <div class="btn-group btn-group-justified">
@@ -47,9 +78,9 @@
       <a href="/tournaments/<%= @tournament.id %>/edit" class="btn btn-warning">
         Edit
       </a>
-      <a href="/delete_tournament/<%= @tournament.id %>" class="btn btn-danger" rel="nofollow">
+      <!-- <a href="/delete_tournament/<%= @tournament.id %>" class="btn btn-danger" rel="nofollow">
         Delete
-      </a>
+      </a> -->
     </div>
   </div>
 </div>
